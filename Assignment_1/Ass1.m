@@ -26,7 +26,7 @@ else
     x2 = 0.6;
 end
 
-%% Dimnesions
+%% Dimensions
 
 b = 6.1;        % Wing semi-span
 c = 3.05;       % Wing chord
