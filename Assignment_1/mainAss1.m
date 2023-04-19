@@ -13,7 +13,6 @@ x2=0.6;
 rho=1.225;
 %% GEOMETRY DATA
 b=6.1; %semi-wing span
-b=1;
 c=3.05; %wing chord
 % Lambda=deg2rad(-30); %sweep angle
 

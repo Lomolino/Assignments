@@ -16,7 +16,7 @@ end
 %% BENDING SHAPE FUNCTIONS
 
 for k=1:n_w
-    N_w(k) = sin(1/b*(pi + k*pi) * y); %row vector
+    N_w(k) = sin(1/b*(k*pi) * y); %row vector
 end
 
 
@@ -47,7 +47,7 @@ A_tilde=[A , zeros(size(C,1),size(C,2));
 B_tilde=[B,-C;
         -D, -E];
 q=eig(double(A_tilde),double(B_tilde));
-q(q<0)=nan;
+q(q<1)=nan;
 U=sqrt(2*q./rho);
 %% DIVERGENCE
 qd=min(q);
