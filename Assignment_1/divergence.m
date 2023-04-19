@@ -1,5 +1,5 @@
 function [qd,Ud]=divergence(rho,GJw,b,e,c,CL_alpha,Lambda)
-Lambda
+rad2deg(Lambda)
 % COMPUTES THE TORSO-BENDING DIVERGENCE OF THE WING THROUGH
 % THE RITZ-GALERKIN METHOD
 
@@ -9,14 +9,14 @@ n_w=2; %number of shape functions for bending
 %% TORSION SHAPE FUNCTIONS
 
 for k=1:n_th
-    N_th(k) = sin((k*pi/(2*b)) * y); %row vector
+    N_th(k) = sin(1/b*(pi/2 + k*pi) * y); %row vector
 end
 
 
 %% BENDING SHAPE FUNCTIONS
 
 for k=1:n_w
-    N_w(k) = sin((k*pi/b) * y); %row vector
+    N_w(k) = sin(1/b*(pi + k*pi) * y); %row vector
 end
 
 

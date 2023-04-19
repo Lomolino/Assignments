@@ -13,8 +13,9 @@ x2=0.6;
 rho=1.225;
 %% GEOMETRY DATA
 b=6.1; %semi-wing span
+b=1;
 c=3.05; %wing chord
-Lambda=deg2rad(-30); %sweep angle
+% Lambda=deg2rad(-30); %sweep angle
 
 Lf=9.15; %fuselage length
 
@@ -43,9 +44,10 @@ CL_alpha=2*pi; %both wing and canard
 %AERODYNAMICS OF THE AILERONS FROM SET 2 OF SLIDES
 
 %% POINT 1
-Lambda=linspace(deg2rad(-40),deg2rad(40),10);
-qd=nan(length(Lambda));
-Ud=nan(length(Lambda));
+Lambda=linspace(deg2rad(-40),deg2rad(40),20);
+qd=nan(length(Lambda),1);
+Ud=nan(length(Lambda),1);
+
 for i=1:length(Lambda)
     [qd(i),Ud(i)]=divergence(rho,GJw,b,e,c,CL_alpha,Lambda(i));
 end
