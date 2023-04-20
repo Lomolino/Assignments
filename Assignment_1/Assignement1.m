@@ -4,7 +4,9 @@ clc
 
 %% ASSIGNMENT 
 
-% ABCD last four letter of the person code 10650070
+%%%% personalizza
+
+% ABCD last four letter of the person code 10695843
 
 A = 0;
 B = 0;
@@ -30,13 +32,14 @@ end
 
 b = 6.1;        % Wing semi-span
 c = 3.05;       % Wing chord
-lambda = -30*pi/180;    % Sweep angle
+lambda = -deg3rad(30);    % Sweep angle
 Lf = 9.15;      % Fuselage length
 c_c = 3.05;     % Canard chord
 b_c = 1.525;    % Canard semi-span
 
-y_m = b/cos(lambda);
-%% Wing-Canard Position
+y_m = b/cos(lambda); %%%%
+
+%% Wing and Canard Position
 x_w = 0;
 y_w = 0;
 
@@ -51,7 +54,7 @@ b_a = 0.5*b;    % Ailerons semi-span
 y_a = b_a/cos(lambda);
 e = 0.25*c;
 
-beta = 1*pi/180;
+beta = deg2rad(1);
 
 %% Properties
 
@@ -61,8 +64,7 @@ EIw = x1*4.5*10^6;  % Bending stiffness
 GJw = x2*7.0*10^6;  % Torsional stiffness
 GJf = 12.0*10^6;    % Fuselage Torsional stiffness
 
-
-Cl_alpha = 2*pi;     % Both for the wing and the canard
+Cl_alpha = 2*pi;     % For the wing and the canard
 
 Cl_beta = 1/pi*(acos(1-2*E)+2*sqrt(E*(1-E)))*Cl_alpha;   % Aileron Cl
 Cm_beta = -1/pi*(1-E)*sqrt(E*(1-E))*Cl_alpha;            % Aileron Cm
